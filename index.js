@@ -6,9 +6,9 @@ btnAdd.addEventListener("click", function () {
   let titleArea = document.getElementById("addTitle");
   const title = titleArea.value;
   if (txt && title) {
-    addToLocalStorage(txt, title);
     txtArea.value = "";
     titleArea.value = "";
+    addToLocalStorage(txt, title);
   }
 });
 
