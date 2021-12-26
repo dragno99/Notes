@@ -38,7 +38,7 @@ function showNotes(){
         <div class="card-body">
           <h5 class="card-title">Note ${i+1}</h5>
           <p class="card-text mx-2">${notesObj[i]}</p>
-          <a href="#" id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-secondary">Delete</a>
+          <a href="#" id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-danger">Delete</a>
         </div>
       </div>`
     }
@@ -63,7 +63,7 @@ function deleteFromLocalStorage(index){
 
 let searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('input' , function(e){
-    const value = e.target.value;
+    const value = e.target.value.toLowerCase();
     if(value.length === 0){
         showNotes();
         return;
@@ -81,7 +81,7 @@ searchBtn.addEventListener('input' , function(e){
                 <div class="card-body">
                 <h5 class="card-title">Card ${i+1}</h5>
                 <p class="card-text mx-2">${notesObj[i]}</p>
-                <a href="#" id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-secondary">Delete</a>
+                <a href="#" id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-danger">Delete</a>
                 </div>
             </div>`
         }
