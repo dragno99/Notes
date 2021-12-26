@@ -40,7 +40,7 @@ function showNotes() {
           <h5 class="card-title">${notesObj[i].title}</h5>
           <hr/>
           <p class="card-text mx-2">${notesObj[i].note}</p>
-          <a href="#" id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-danger">Delete</a>
+          <a id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-danger">Delete</a>
         </div>
       </div>`;
   }
@@ -77,13 +77,13 @@ searchBtn.addEventListener("input", function (e) {
   } else notesObj = JSON.parse(notesObj);
   let data = "";
   for (let i = notesObj.length - 1; i >= 0; i--) {
-    if (notesObj[i].includes(value)) {
+    if (notesObj[i].note.includes(value)) {
       data += `<div class="card my-3 mx-1" style="width: 18rem">
         <div class="card-body">
           <h5 class="card-title">${notesObj[i].title}</h5>
           <hr/>
           <p class="card-text mx-2">${notesObj[i].note}</p>
-          <a href="#" id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-danger">Delete</a>
+          <a id = "${i}" onclick="deleteFromLocalStorage(this.id)" class="btn btn-danger">Delete</a>
         </div>
       </div>`;
     }
